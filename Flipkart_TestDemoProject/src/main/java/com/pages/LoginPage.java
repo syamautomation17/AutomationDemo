@@ -25,6 +25,7 @@ public class LoginPage {
 	private static String newAccountPageText ="Looks like you're new here!";
 	private static String invalideDetailesText ="Your username or password is incorrect";
 	
+	
 	@FindBy(xpath = "(//input[@autocomplete ='off'])[2]")
 	@CacheLookup
 	WebElement userInput;
