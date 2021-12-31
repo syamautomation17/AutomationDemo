@@ -1,0 +1,302 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/5/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Dec 31 09:40:55 IST 2021</td>
+</tr>
+<tr><td>Total time:</td><td>9 seconds (9746 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runner.NGTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runner.NGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate forgot password link", "Flipkart -text-boxes buttons  and links are present on the Login page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div><a href='#' onClick='toggleBox("stack-trace428798670", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace428798670'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div></td>
+<td>0</td>
+<td>com.runner.NGTestRunner@396e2f39</td></tr>
+<tr>
+<td title='com.runner.NGTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runner.NGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Create an account link", "Flipkart -text-boxes buttons  and links are present on the Login page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2030458766", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2030458766'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div></td>
+<td>0</td>
+<td>com.runner.NGTestRunner@396e2f39</td></tr>
+<tr>
+<td title='com.runner.NGTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runner.NGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Request OTP button", "Flipkart -text-boxes buttons  and links are present on the Login page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1476061571", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1476061571'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div></td>
+<td>0</td>
+<td>com.runner.NGTestRunner@396e2f39</td></tr>
+<tr>
+<td title='com.runner.NGTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runner.NGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Identify Broken links in application", "Flipkart -text-boxes buttons  and links are present on the Login page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1833592262", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1833592262'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div></td>
+<td>0</td>
+<td>com.runner.NGTestRunner@396e2f39</td></tr>
+<tr>
+<td title='com.runner.NGTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runner.NGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not login into Flipkart site when the username and password are invalid", "Flipkart -text-boxes buttons  and links are present on the Login page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1360440329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1360440329'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LAPTOP-8O118D2N&apos;, ip: &apos;192.168.29.158&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_301&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</pre></div></td>
+<td>0</td>
+<td>com.runner.NGTestRunner@396e2f39</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.runner.NGTestRunner.runScenario()'><b>runScenario</b><br>Test class: com.runner.NGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login Page UserName Password Terms and Privacy links and Login Button", "Flipkart -text-boxes buttons  and links are present on the Login page"</td>
+<td></td>
+<td>8</td>
+<td>com.runner.NGTestRunner@396e2f39</td></tr>
+</table><p>
+</body>
+</html>

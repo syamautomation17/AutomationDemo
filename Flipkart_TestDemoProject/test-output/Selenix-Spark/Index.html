@@ -1,0 +1,1304 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenix - Extent Reports</title>
+        <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+	    <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7e408aed24af91e1ad76f49a74ecfa0ef1d97cfb/spark/css/spark-style.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+
+
+		
+</style></head>    <script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<body class="spa bdd-report standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+<div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">Selenix Test Reports</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">Dec 31, 2021 09:40:56 AM</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div><div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown" onclick="toggleView('test-view')">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown" onclick="toggleView('tag-view')">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('exception-view')">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>            <div class="page-container">
+                <div class="main-content">
+<div class="test-wrapper row test-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tests</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-exclamation-circle"></i>
+					</a>
+					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
+						
+						
+						
+						<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning pull-right"></span></a>
+						<div class="dropdown-divider"></div>
+						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+					</ul>
+				</li>
+				<li class="user-profile dropdown dropdown-animated scale-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-tag"></i>
+					</a>
+					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+						<a class="dropdown-item" href="#">@LoginPage</a>
+						<a class="dropdown-item" href="#">@Login1</a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item"  status="fail" test-id="1"
+					author=""
+					tag="@LoginPage"
+					device="">
+					<div class="status-avatar fail-bg">
+						<i class="fa fa-times text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">Flipkart -text-boxes buttons  and links are present on the Login page</p>
+							<p class="duration text-sm">0h 0m 3s+134ms</p>
+							<span class="datetime">09:41:02 AM</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-fail">Flipkart -text-boxes buttons  and links are present on the Login page</h5>
+									<span class='badge badge-success'>12.31.2021 09:41:02</span>
+									<span class='badge badge-danger'>12.31.2021 09:41:05</span>
+									<span class='badge badge-default'>0h 0m 3s+134ms</span>
+								</div>
+								<div class="m-t-15">
+			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> @LoginPage</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									Description: Verify that all the labels and controls including text-boxes, buttons, and links are present on the Login page
+								</div>
+							</div>
+						</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Validate Login Page UserName Password Terms and Privacy links and Login Button</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start given" title="com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Login_Screen_is_displayed()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then Verify Login Screen is displayed</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_userName_filed_textbox_is_displayed_and_validated()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then verify userName filed textbox is displayed and validated</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_password_filed_textbox_is_displayed_and_validated()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then verify password filed textbox is displayed and validated</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Flipkarts_use_terms_and_privacy_text_is_displayed()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then verify Flipkarts use terms and privacy text is displayed</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_login_button_is_displayed_and_clickable()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then verify login button is displayed and clickable</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_forgot_password_link_is_displayed_in_login_page_screen()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then verify forgot password link is displayed in login page screen</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.validate_forgot_password_link_is_clickable_and_navigated_as_expected()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>Then validate forgot password link is clickable and navigated as expected</span>
+							</div>
+				<div class="details"></div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Validate forgot password link</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start given" title="com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page</span>
+							</div>
+				<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Login_Screen_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify Login Screen is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_forgot_password_link_is_displayed_in_login_page_screen()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify forgot password link is displayed in login page screen</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.validate_forgot_password_link_is_clickable_and_navigated_as_expected()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then validate forgot password link is clickable and navigated as expected</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>com.stepdefinitions.GenralHooks.tear_Down(io.cucumber.java.Scenario)</span>
+							</div>
+				<div class="details">this is my failure message</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Validate Request OTP button</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start given" title="com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page</span>
+							</div>
+				<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Login_Screen_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify Login Screen is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Request_OTP_button_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify Request OTP button is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.click_on_request_otp_button()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then click on request otp button</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_otp_sent_message()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify otp sent message</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>com.stepdefinitions.GenralHooks.tear_Down(io.cucumber.java.Scenario)</span>
+							</div>
+				<div class="details">this is my failure message</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Validate Create an account link</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start given" title="com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page</span>
+							</div>
+				<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Login_Screen_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify Login Screen is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Create_an_account_link_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify Create an account link is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.click_on_create_an_account_link()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then click on create an account link</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_is_navigated_create_new_account_page()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify is navigated create new account page</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_terms_and_privacy_link_is_displaying()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify terms and privacy link is displaying</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_user_can_enter_mobile_number_and_click_on_continue()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify user can enter mobile number and click on continue</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>com.stepdefinitions.GenralHooks.tear_Down(io.cucumber.java.Scenario)</span>
+							</div>
+				<div class="details">this is my failure message</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">User should not login into Flipkart site when the username and password are invalid</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start given" title="com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page</span>
+							</div>
+				<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Login_Screen_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify Login Screen is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start when" title="com.stepdefinitions.LoginTest.user_enter_username_and_password_are_invalid()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>When User enter username and password are invalid</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_error_message_for_invalid_details()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then verify error message for invalid details</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>com.stepdefinitions.GenralHooks.tear_Down(io.cucumber.java.Scenario)</span>
+							</div>
+				<div class="details">this is my failure message</div>
+					</div>
+				</div>
+	</div>
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Identify Broken links in application</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+					<div class="card-body">
+							<div class="d-flex align-items-center justify-content-start given" title="com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page</span>
+							</div>
+				<textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at com.utilities.Tools.elementisPragent(Tools.java:157)
+	at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+	at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+	at ?.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.verify_Login_Screen_is_displayed()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify Login Screen is displayed</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.LoginTest.user_close_the_login_page()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then user close the login page</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start then" title="com.stepdefinitions.HomeTest.navigate_to_home_page()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then navigate to home page</span>
+							</div>
+				<div class="details">Step skipped</div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>com.stepdefinitions.GenralHooks.tear_Down(io.cucumber.java.Scenario)</span>
+							</div>
+				<div class="details">this is my failure message</div>
+					</div>
+				</div>
+	</div>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row tag-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Tags</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">2</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@LoginPage</p>
+							<p class="duration text-sm">7 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							<span class='badge badge-danger'>5</span>
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@LoginPage</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							<span status="fail" class='badge badge-danger'>5 failed</span>
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:02 AM</td>
+									<td class='linked' test-id='1'>
+										Flipkart -text-boxes buttons  and links are present on the Login page
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>09:41:02 AM</td>
+									<td class='linked' test-id='2'>
+										Validate Login Page UserName Password Terms and Privacy links and Login Button
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate Login Page UserName Password Terms and Privacy links and Login Button</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='13'>
+										Validate forgot password link
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate forgot password link</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='20'>
+										Validate Request OTP button
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate Request OTP button</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='28'>
+										Validate Create an account link
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate Create an account link</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='38'>
+										User should not login into Flipkart site when the username and password are invalid
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.User should not login into Flipkart site when the username and password are invalid</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='45'>
+										Identify Broken links in application
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Identify Broken links in application</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">@Login1</p>
+							<p class="duration text-sm">6 tests</p>
+							<span class="datetime">
+							<span class='badge badge-success'>1</span>
+							<span class='badge badge-danger'>5</span>
+							
+							
+							</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>@Login1</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
+							<span status="fail" class='badge badge-danger'>5 failed</span>
+							
+							
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="tag-test-status" status="pass">
+									<td>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
+										</div>
+									</td>
+									<td>09:41:02 AM</td>
+									<td class='linked' test-id='2'>
+										Validate Login Page UserName Password Terms and Privacy links and Login Button
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate Login Page UserName Password Terms and Privacy links and Login Button</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='13'>
+										Validate forgot password link
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate forgot password link</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='20'>
+										Validate Request OTP button
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate Request OTP button</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='28'>
+										Validate Create an account link
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Validate Create an account link</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='38'>
+										User should not login into Flipkart site when the username and password are invalid
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.User should not login into Flipkart site when the username and password are invalid</span>
+										</div>
+									</td>
+								</tr>
+								<tr class="tag-test-status" status="fail">
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='45'>
+										Identify Broken links in application
+										<div class="">
+											<span class="badge badge-default">Flipkart -text-boxes buttons  and links are present on the Login page.Identify Broken links in application</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row exception-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Exception</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">1</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+							<p class="duration text-sm">5 tests</p>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>org.openqa.selenium.NoSuchSessionException</h4>
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='15'>
+										Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page
+										<div class="">
+											<span class="badge badge-default">Validate forgot password link</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='22'>
+										Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page
+										<div class="">
+											<span class="badge badge-default">Validate Request OTP button</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='30'>
+										Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page
+										<div class="">
+											<span class="badge badge-default">Validate Create an account link</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='40'>
+										Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page
+										<div class="">
+											<span class="badge badge-default">User should not login into Flipkart site when the username and password are invalid</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:41:05 AM</td>
+									<td class='linked' test-id='47'>
+										Given Launch the browser navigate to the Flipkart HomePage url and navigate to user login page
+										<div class="">
+											<span class="badge badge-default">Identify Broken links in application</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div>                    <!-- dashboard -->
+<div class="container-fluid p-4 dashboard-view">
+	<div class="row">
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Features</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='parent-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='0%'>
+						<b>0</b> features passed
+						</small>
+					</div>
+					<div>
+						<small data-tooltip='100%'><b>1</b> features failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Scenarios</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='child-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='16.667%'><b>1</b> scenarios passed</small></div>
+					<div>
+						<small data-tooltip='83.333%'><b>5</b> scenarios failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Steps</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div><small data-tooltip='35.135%'><b>13</b> steps passed</small></div>
+					<div>
+						<small data-tooltip='13.514%'><b>5</b> steps failed, 
+						<b>19</b> skipped, <b data-tooltip='51.351%'>0</b> others
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Features</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>.00%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Scenarios</h6>
+							<h2 class="font-size-28 font-weight-light mt-3">6</h2>
+							<span class="text-semibold text-success font-size-15">
+							<i class="ti-arrow-up font-size-11"></i> 
+							<span>16.67%</span>
+							</span>
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-align-left font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Start</h6>
+							<h4 class="font-weight-light mt-4">Dec 31, 2021 09:40:56 AM</h4>
+							<span class="text-semibold text-success font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body box-height-150">
+					<div class="media justify-content-between">
+						<div class="card-header">
+							<h6 class="card-title">Duration</h6>
+							<h4 class="font-weight-light mt-4">0h 0m 9s+161ms</h4>
+							<span class="text-semibold font-size-15">
+						</div>
+						<div class="align-self-end">
+							<i class="fa fa-clock-o font-size-70 opacity-01"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Timeline</h6>
+				</div>
+				<div class="card-body">
+					<div class="">
+						<canvas id="timeline" height="120"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h6 class="card-title">Tags</h6>
+				</div>
+				<div class="table-overflow">
+					<table class="table table-sm">
+						<thead>
+							<tr class="bg-gray">
+								<th>Name</th>
+								<th>Passed</th>
+								<th>Failed</th>
+								<th>Others</th>
+								<th>Passed %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>@LoginPage</td>
+								<td>1</td>
+								<td>5</td>
+								<td>0</td>
+								<td>
+									14.286%
+								</td>
+							</tr>
+							<tr>
+								<td>@Login1</td>
+								<td>1</td>
+								<td>5</td>
+								<td>0</td>
+								<td>
+									16.667%
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var statusGroup = {
+	    parentCount: 1,
+		passParent: 0,
+		failParent: 1,
+		fatalParent: 0,
+		errorParent: 0,
+		warningParent: 0,
+		skipParent: 0,
+		exceptionsParent: 1,
+		childCount: 6,
+		passChild: 1,
+		failChild: 5,
+		fatalChild: 0,
+		errorChild: 0,
+		warningChild: 0,
+		skipChild: 0,
+		infoChild: 0,
+		debugChild: 0,
+		exceptionsChild: 5,
+		grandChildCount: 37,
+		passGrandChild: 13,
+		failGrandChild: 5,
+		fatalGrandChild: 0,
+		errorGrandChild: 0,
+		warningGrandChild: 0,
+		skipGrandChild: 19,
+		infoGrandChild: 0,
+		debugGrandChild: 0,
+		exceptionsGrandChild: 24,
+		eventsCount: 37,
+		passEvents: 8,
+		failEvents: 5,
+		fatalEvents: 0,
+		errorEvents: 0,
+		warningEvents: 0,
+		skipEvents: 19,
+		infoEvents: 5,
+		debugEvents: 0,
+		exceptionsEvents: 0
+	};
+</script>
+<script>
+	var timeline = {
+	        "Flipkart -text-boxes buttons  and links are present on the Login page":3.134
+	};
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ac7abbc71b4bb073da00153a5a3fdbcfe0c95e2a/spark/js/spark-script.js"></script>
+<script type="text/javascript">
+
+
+
+
+$(document).ready(function() {
+});
+
+		
+</script></body>
+</html>

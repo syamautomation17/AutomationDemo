@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="5" ignored="0" total="6" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="9746" started-at="2021-12-31T09:40:55 IST" finished-at="2021-12-31T09:41:05 IST">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Default test" duration-ms="9746" started-at="2021-12-31T09:40:55 IST" finished-at="2021-12-31T09:41:05 IST">
+      <class name="com.runner.NGTestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="setUpClass" is-config="true" duration-ms="320" started-at="2021-12-31T09:40:55 IST" finished-at="2021-12-31T09:40:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" duration-ms="8810" started-at="2021-12-31T09:40:56 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-31T09:41:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Login Page UserName Password Terms and Privacy links and Login Button"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Flipkart -text-boxes buttons  and links are present on the Login page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" duration-ms="22" started-at="2021-12-31T09:41:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-31T09:41:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate forgot password link"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Flipkart -text-boxes buttons  and links are present on the Login page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+at com.utilities.Tools.elementisPragent(Tools.java:157)
+at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+at ✽.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" duration-ms="10" started-at="2021-12-31T09:41:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-31T09:41:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Request OTP button"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Flipkart -text-boxes buttons  and links are present on the Login page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+at com.utilities.Tools.elementisPragent(Tools.java:157)
+at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+at ✽.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" duration-ms="8" started-at="2021-12-31T09:41:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-31T09:41:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Create an account link"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Flipkart -text-boxes buttons  and links are present on the Login page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+at com.utilities.Tools.elementisPragent(Tools.java:157)
+at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+at ✽.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" duration-ms="8" started-at="2021-12-31T09:41:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-31T09:41:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User should not login into Flipkart site when the username and password are invalid"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Flipkart -text-boxes buttons  and links are present on the Login page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+at com.utilities.Tools.elementisPragent(Tools.java:157)
+at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+at ✽.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="runScenario" duration-ms="6" started-at="2021-12-31T09:41:05 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-31T09:41:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Identify Broken links in application"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Flipkart -text-boxes buttons  and links are present on the Login page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-8O118D2N', ip: '192.168.29.158', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+at com.utilities.Tools.elementisPragent(Tools.java:157)
+at com.pages.LoginPage.click_UserLogin(LoginPage.java:102)
+at com.stepdefinitions.LoginTest.launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page(LoginTest.java:19)
+at ✽.Launch the browser navigate to the Flipkart HomePage url and navigate to user login page(file:///D:/hcl_workspace/Flipkart_TestDemoProject/fetures/LoginFeature.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.runner.NGTestRunner@396e2f39]" name="tearDownClass" is-config="true" duration-ms="524" started-at="2021-12-31T09:41:05 IST" finished-at="2021-12-31T09:41:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.runner.NGTestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
