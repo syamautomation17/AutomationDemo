@@ -152,7 +152,7 @@ public class LoginPage {
 	
 	public void validateForgotLinkIsClickable()
 	{
-		//enter_UserName();
+		enter_UserName();
 		forgotPasswordLink.click();
 		String forgotPasswordReqText =Tools.getText(otpSentText);
 		Assert.assertEquals(forgotPasswordReqText, forgotPasswordRequested);

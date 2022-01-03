@@ -153,7 +153,7 @@ public class Tools {
 	
 	public static boolean elementisPragent(WebElement element)
 	{
-	
+		Tools.dynamic_Wait(element, 20);
 		return element.isDisplayed();
 	}
 	

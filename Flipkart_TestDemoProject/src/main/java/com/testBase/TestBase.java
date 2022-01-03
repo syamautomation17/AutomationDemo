@@ -1,6 +1,8 @@
 package com.testBase;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,19 +19,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestBase {
 
 	private TestBase() {
-		PageFactory.initElements(TestBase.get(), this);
+		
 	}
 
 	public static InheritableThreadLocal<WebDriver> driverpool = new InheritableThreadLocal<>();
 //	private static final ThreadLocal<WebDriver> driverpool = new ThreadLocal<>();
 	// static WebDriver driverpool = InitializeWebDriver.driver;
 
+
 	public static WebDriver get() {
 		driverpool.get();
 		String browser = System.getProperty("browser") != null ? browser = System.getProperty("browser").toLowerCase()
 				: Tools.get_Pro("browser").toLowerCase();
-
-		if (driverpool.get() == null) {
+		
+				if (driverpool.get() == null) {
 
 			String OSname = System.getProperty("os.name").toLowerCase();
 
@@ -82,7 +85,7 @@ public class TestBase {
 			}
 		}
 		return driverpool.get();
-
+				
 	}
 
 	public static void launch_Browser() {
@@ -122,7 +125,7 @@ public class TestBase {
 
 		if (driverpool != null) {
 
-			driverpool.get().quit();
+			driverpool.get().close();
 		}
 	}
 

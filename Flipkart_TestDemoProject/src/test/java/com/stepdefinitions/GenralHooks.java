@@ -2,6 +2,7 @@ package com.stepdefinitions;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterTest;
 
 import com.testBase.TestBase;
 
@@ -13,6 +14,7 @@ public class GenralHooks {
 
 	@Before
 	public void set_up(Scenario scenario) {
+		
 		try
 		{
 		TestBase.launch_Browser();
@@ -23,7 +25,7 @@ public class GenralHooks {
 		}
 	}
 
-	@After
+	@AfterTest
 	public void tear_Down(Scenario scenario) {
 
 		try {

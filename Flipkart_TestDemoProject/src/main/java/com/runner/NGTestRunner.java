@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-		glue = "com.stepdefinitions", features = "fetures/LoginFeature.feature", tags="@Login1",dryRun = false, monochrome = true, strict = false, plugin = { "pretty",
+		glue = "com.stepdefinitions", features = "fetures/LoginFeature.feature", tags="@Login",dryRun = false, monochrome = true, strict = false, plugin = { "pretty",
 				"html:test-output", "json:target/cucumber.json",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" })
 
