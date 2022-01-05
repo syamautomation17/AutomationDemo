@@ -8,23 +8,26 @@ import org.testng.Assert;
 
 import com.testBase.TestBase;
 import com.utilities.Tools;
+import com.utilities.Utility;
 
 
 
 public class LoginPage {
 
+	
+	private static String userNameValidation ="Please enter valid Email ID/Mobile number";
+	private static String passwordValidation ="Please enter Password";
+	private static String termsAndPrivacy ="By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.";
+	private static String forgotPasswordRequested ="OTP sent to Mobile";
+	private static String otpRequested ="Please enter the OTP sent to";
+	private static String newAccountPageText ="Looks like you're new here!";
+	private static String invalideDetailesText ="Your username or password is incorrect";
+	
 	public LoginPage() {
 
 		PageFactory.initElements(TestBase.get(), this);
 	}
-	private static String userNameValidation ="Please enter valid Email ID/Mobile number";
-	private static String passwordValidation ="Please enter Password";
-	private static String termsAndPrivacy ="By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.";
-	private static String forgotPasswordRequested ="OTP sent to Email";
-	private static String otpRequested ="Please enter the OTP sent to";
-	private static String newAccountPageText ="Looks like you're new here!";
-	private static String invalideDetailesText ="Your username or password is incorrect";
-		
+	
 	@FindBy(xpath = "(//input[@autocomplete ='off'])[2]")
 	@CacheLookup
 	WebElement userInput;
@@ -65,7 +68,7 @@ public class LoginPage {
 	@CacheLookup
 	WebElement forgotPasswordLink;
 	
-	@FindBy(xpath="//div[@class='_2MlkI1']//div/span[text()='OTP sent to Email']")
+	@FindBy(xpath="//div[@class='_2MlkI1']//div/span[contains(text(),'OTP sent to')]")
 	@CacheLookup
 	WebElement otpSentText;
 	
@@ -99,7 +102,7 @@ public class LoginPage {
 	
 	public LoginPage click_UserLogin() {
 		
-		boolean loginScreen =Tools.elementisPragent(loginForm);
+		boolean loginScreen =Tools.elementisPresent(loginForm);
 		if(!loginScreen)
 		{
 		Tools.dynamic_Wait(userlogin, 10);
@@ -113,7 +116,7 @@ public class LoginPage {
 	
 	public void verifyLoginScreen()
 	{
-		boolean loginScreen =Tools.elementisPragent(loginForm);
+		boolean loginScreen =Tools.elementisPresent(loginForm);
 		Assert.assertTrue(loginScreen);
 		String login=Tools.getText(loginText);
 		Assert.assertEquals(login, "Login");
@@ -127,9 +130,9 @@ public class LoginPage {
 		
 		
 	}
-	public void validatePasswordTextBox()
+	public void validatePasswordTextBox(String userName)
 	{
-		enter_UserName();
+		enter_UserName(userName);
 		loginButton.click();
 		String passwordTextValidation =Tools.getText(passwordValidationText);
 		Assert.assertEquals(passwordTextValidation, passwordValidation);
@@ -150,9 +153,9 @@ public class LoginPage {
 		Assert.assertTrue(loginButtonEnabled);
 	}
 	
-	public void validateForgotLinkIsClickable()
+	public void validateForgotLinkIsClickable(String userName)
 	{
-		enter_UserName();
+		enter_UserName(userName);
 		forgotPasswordLink.click();
 		String forgotPasswordReqText =Tools.getText(otpSentText);
 		Assert.assertEquals(forgotPasswordReqText, forgotPasswordRequested);
@@ -165,9 +168,9 @@ public class LoginPage {
 		Assert.assertTrue(requestOTPButton);
 	}
 	
-	public void clickOnRequestOTPButton()
+	public void clickOnRequestOTPButton(String userName)
 	{
-		enter_UserName();
+		enter_UserName(userName);
 		otprequestButton.click();
 	}
 	
@@ -195,9 +198,9 @@ public class LoginPage {
 		Assert.assertEquals(createNewAccountPageText, newAccountPageText);
 	}
 	
-	public void verifyUserCanEnterPhoneNumber()
+	public void verifyUserCanEnterPhoneNumber(String phoneNumber)
 	{
-		enter_phoneNumber();
+		enter_phoneNumber(phoneNumber);
 		Tools.waitfor_Clickable(createNewAccountContinoueButton, 10);
 		createNewAccountContinoueButton.click();
 				
@@ -214,23 +217,20 @@ public class LoginPage {
 		Tools.dynamic_Wait(closeLoginPage, 20);
 		closeLoginPage.click();
 	}
-	public void enter_UserName() {
+	public void enter_UserName(String userName ) {
 
-		String userName = Tools.get_Pro("username");
 		Tools.dynamic_Wait(userInput, 10);
 		userInput.sendKeys(userName);
 
 	}
-	public void enter_phoneNumber() {
+	public void enter_phoneNumber(String phoneNumber) {
 
-		String phoneNumber = Tools.get_Pro("phoneNumber");
 		Tools.dynamic_Wait(userInput, 10);
 		userInput.sendKeys(phoneNumber);
 
 	}
-	public void enter_Password() {
+	public void enter_Password(String password) {
 
-		String password = Tools.get_Pro("password");
 		Tools.dynamic_Wait(passwordInput, 10);
 		passwordInput.sendKeys(password);
 

@@ -1,8 +1,10 @@
 package com.testBase;
 
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
+import io.cucumber.java.Scenario;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,29 +12,26 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
 
 import com.utilities.Tools;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
-	private TestBase() {
-		
+public TestBase() {
+
 	}
 
 	public static InheritableThreadLocal<WebDriver> driverpool = new InheritableThreadLocal<>();
-//	private static final ThreadLocal<WebDriver> driverpool = new ThreadLocal<>();
-	// static WebDriver driverpool = InitializeWebDriver.driver;
 
-
+	/** This method it will initiate the driver object according to browser type **/
 	public static WebDriver get() {
-		driverpool.get();
+
 		String browser = System.getProperty("browser") != null ? browser = System.getProperty("browser").toLowerCase()
 				: Tools.get_Pro("browser").toLowerCase();
-		
-				if (driverpool.get() == null) {
+
+		if (driverpool.get() == null) {
 
 			String OSname = System.getProperty("os.name").toLowerCase();
 
@@ -85,9 +84,10 @@ public class TestBase {
 			}
 		}
 		return driverpool.get();
-				
-	}
 
+	}
+	/** This method will select the environment and open the url using the get method **/
+	@BeforeTest
 	public static void launch_Browser() {
 
 		TestBase.get();
@@ -121,12 +121,31 @@ public class TestBase {
 
 	}
 
+
+	/** This method captures and saves screen shot **/
+	public void takeScreenShot(Scenario scenario) {
+		
+		try {
+			String screenshotName = scenario.getName().replaceAll(" ", "_");
+			if (scenario.isFailed()) {
+				scenario.log("this is my failure message");
+				TakesScreenshot ts = (TakesScreenshot) TestBase.get();
+				byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+				scenario.attach(screenshot, "image/png", screenshotName);
+			}
+		}
+		catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
+			
+	/** This method will close all browsers opened by automation **/
 	public static void close() {
 
 		if (driverpool != null) {
 
-			driverpool.get().close();
+			driverpool.get().quit();
 		}
 	}
-
 }

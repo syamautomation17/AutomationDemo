@@ -3,6 +3,7 @@ package com.stepdefinitions;
 import com.pages.HomePage;
 import com.pages.LoginPage;
 import com.utilities.Tools;
+import com.utilities.Utility;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,11 @@ public class LoginTest extends Tools {
 	
 	LoginPage loginpage =new LoginPage();
 	HomePage userpage =new HomePage();
+	Utility utility=new Utility();
+	Object[][] userdata=utility.loginData();
+	String userName=userdata[0][0].toString();
+	String password=userdata[0][1].toString();
+	String phoneNumber=userdata[0][2].toString();
 	
 	@Given("Launch the browser navigate to the Flipkart HomePage url and navigate to user login page")
 	public void launch_the_browser_navigate_to_the_Flipkart_HomePage_url_and_navigate_to_user_login_page() {
@@ -23,14 +29,14 @@ public class LoginTest extends Tools {
 		loginpage.verifyLoginScreen();
 	}
 	
-	@Then("verify userName filed textbox is displayed and validated")
-	public void verify_userName_filed_textbox_is_displayed_and_validated() {
+	@Then("verify userName textbox field is displayed and validated")
+	public void verify_userName_textbox_field_is_displayed_and_validated() {
 		loginpage.validateUserNameTextBox();
 	}
 	
-	@Then("verify password filed textbox is displayed and validated")
-	public void verify_password_filed_textbox_is_displayed_and_validated() {
-		loginpage.validatePasswordTextBox();
+	@Then("verify password textbox field is displayed and validated")
+	public void verify_password_textbox_field_is_displayed_and_validated() {
+		loginpage.validatePasswordTextBox(userName);
 	}
 	
 	@Then("verify Flipkarts use terms and privacy text is displayed")
@@ -50,7 +56,7 @@ public class LoginTest extends Tools {
 	
 	@Then("validate forgot password link is clickable and navigated as expected")
 	public void validate_forgot_password_link_is_clickable_and_navigated_as_expected() {
-		loginpage.validateForgotLinkIsClickable();
+		loginpage.validateForgotLinkIsClickable(userName);
 	}
 
 	@Then("verify Request OTP button is displayed")
@@ -59,7 +65,7 @@ public class LoginTest extends Tools {
 	}
 	@Then("click on request otp button")
 	public void click_on_request_otp_button() {
-		loginpage.clickOnRequestOTPButton();
+		loginpage.clickOnRequestOTPButton(userName);
 	}
 	@Then("verify otp sent message")
 	public void verify_otp_sent_message() {
@@ -88,13 +94,15 @@ public class LoginTest extends Tools {
 
 	@Then("verify user can enter mobile number and click on continue")
 	public void verify_user_can_enter_mobile_number_and_click_on_continue() {
-		loginpage.verifyUserCanEnterPhoneNumber();
+		
+		loginpage.verifyUserCanEnterPhoneNumber(phoneNumber);
 	}
 	
 	@When("User enter username and password are invalid")
 	public void user_enter_username_and_password_are_invalid() {
-		loginpage.enter_UserName();
-		loginpage.enter_Password();
+			
+		loginpage.enter_UserName(userName);
+		loginpage.enter_Password(password);
 		loginpage.click_loginButton();
 	}
 

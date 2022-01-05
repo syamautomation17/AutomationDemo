@@ -11,7 +11,6 @@ import com.utilities.Tools;
 
 public class HomePage {
 
-	
 	public HomePage() {
 		
 		
@@ -40,18 +39,16 @@ public class HomePage {
 		
 		Tools.dynamic_Wait(userNamelabel, 10);
 		String userlabeltext=userNamelabel.getText();
-		//String username=Tools.get_Pro("username");
-		//Tools.content_Validation(username, userlabeltext, "User Home Page validation");
 		System.out.println("UserName is presented "+userlabeltext);
-		Tools.elementisPragent(userNamelabel);
+		Tools.elementisPresent(userNamelabel);
 			
 		
 	}
 	
 	public void verifyHomePage()
 	{
-		Tools.dynamic_Wait(homePageAllCategories, 10);
-		boolean homepage =Tools.elementisPragent(homePageAllCategories);
+		Tools.dynamic_Wait(homePageAllCategories, 20);
+		boolean homepage =Tools.elementisPresent(homePageAllCategories);
 		Assert.assertTrue(homepage);
 		
 	}

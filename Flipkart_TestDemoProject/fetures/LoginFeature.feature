@@ -10,8 +10,8 @@ Background: User launch the application and navigate to login Page
 @Login
 Scenario: Validate Login Page UserName Password Terms and Privacy links and Login Button
  
- Then verify userName filed textbox is displayed and validated
- Then verify password filed textbox is displayed and validated
+ Then verify userName textbox field is displayed and validated
+ Then verify password textbox field is displayed and validated
  Then verify Flipkarts use terms and privacy text is displayed
  Then verify login button is displayed and clickable
 
@@ -46,7 +46,7 @@ Scenario: User navigate to Flipkart home page and highlight electronic
  Then navigate to home page
  Then highlight electronic tab in home page
  
-   @Login
+   @Login1
 Scenario: Identify Broken links in application
 
  Then user close the login page

@@ -89,7 +89,7 @@ public class Tools {
 				.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class)
 				.until(new Function<WebDriver, WebElement>() {
 
-				//	@Override
+					@Override
 					public WebElement apply(WebDriver t) {
 						// TODO Auto-generated method stub
 						return ele;
@@ -151,9 +151,9 @@ public class Tools {
 
 	}
 	
-	public static boolean elementisPragent(WebElement element)
+	public static boolean elementisPresent(WebElement element)
 	{
-		Tools.dynamic_Wait(element, 20);
+	
 		return element.isDisplayed();
 	}
 	
