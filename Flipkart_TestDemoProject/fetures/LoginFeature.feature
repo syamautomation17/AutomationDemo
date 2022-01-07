@@ -46,7 +46,7 @@ Scenario: User navigate to Flipkart home page and highlight electronic
  Then navigate to home page
  Then highlight electronic tab in home page
  
-   @Login1
+   @Login
 Scenario: Identify Broken links in application
 
  Then user close the login page

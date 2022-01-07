@@ -10,6 +10,7 @@ public class HomeTest {
 	@Then("navigate to home page")
 	public void navigate_to_home_page() {
 		homePage.verifyHomePage();
+		homePage.verifyProductCategoryLinks();
 	}
 
 	@Then("highlight electronic tab in home page")
