@@ -3,9 +3,7 @@ package com.pages;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -16,7 +14,6 @@ import org.testng.Assert;
 import com.testBase.TestBase;
 import com.utilities.Tools;
 
-import net.bytebuddy.description.modifier.SynchronizationState;
 
 public class HomePage {
 
